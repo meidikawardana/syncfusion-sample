@@ -1,12 +1,10 @@
 import { date } from "quasar";
-import { mapActions, mapMutations } from "vuex";
+import { mapState, mapActions, mapMutations, mapGetters } from "vuex";
 
 export default {
   data() {
     return {
-      objectID: "TspScheduleGantt",
       data: [],
-      ganttKey: 0,
       addForm: {
         discipline: null,
         roles: [],
@@ -164,6 +162,7 @@ export default {
     };
   },
   computed: {
+    ...mapState("Schedule", ["objectID", "schedules", "timeOffTable"]),
     height() {
       return this.$q.screen.height - 270 + "px";
     },
@@ -183,7 +182,6 @@ export default {
     ...mapMutations("Schedule", ["SET_SCHEDULES"]),
     onFilteredData(args) {
       this.data = [...args];
-      this.ganttKey++;
     },
     getSetTimeOffDuration: function (args) {
       const start = new Date(args.start_date);

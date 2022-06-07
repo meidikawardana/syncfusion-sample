@@ -12,6 +12,11 @@
 
     <q-page-container>
       <q-page padding>
+        <div class="row">
+          <div class="col-12">
+            <schedule-filter @done="onFilteredData" />
+          </div>
+        </div>
         <!-- Gantt -->
         <div class="row">
           <div class="col-12">
@@ -19,10 +24,9 @@
               <ejs-gantt
                 ref="gantt"
                 id="TspScheduleGantt"
-                :key="ganttKey"
                 :height="ganttHeight"
                 :enableVirtualization="true"
-                :dataSource="virtualData"
+                :dataSource="data"
                 :taskFields="ganttSettings.taskFields"
                 :timelineSettings="ganttSettings.timelineSettings"
                 :readOnly="ganttSettings.readOnly"
@@ -362,7 +366,8 @@
 
 <script>
 import { date } from "quasar";
-import scheduler from "./scheduler";
+import scheduler from "../mixins/TspSchedule/scheduler";
+import { mapMutations } from "vuex";
 import {
   GanttPlugin,
   ContextMenu,
@@ -378,7 +383,6 @@ import {
 } from "@syncfusion/ej2-vue-gantt";
 
 import Vue from "vue";
-import { virtualData } from "./data-source";
 
 Vue.use(GanttPlugin);
 
@@ -387,7 +391,6 @@ export default {
   mixins: [toolbar, scheduler],
   data() {
     return {
-      virtualData: virtualData,
       action: "create",
       searchForm: {},
       openEventModal: false,
@@ -413,9 +416,12 @@ export default {
       VirtualScroll,
     ],
   },
-  methods: {},
+  methods: {
+    ...mapMutations("Schedule", ["SET_OBJECT_ID"]),
+  },
   computed: {},
   created() {
+    this.SET_OBJECT_ID("TspScheduleGantt");
     this.ganttSettings.projectStartDate = new Date();
     this.ganttSettings.projectEndDate = date.addToDate(
       this.ganttSettings.projectStartDate,
@@ -423,7 +429,10 @@ export default {
     );
     this.ganttHeight = this.$q.screen.height - 270 + "px";
   },
-  components: {},
+  components: {
+    "schedule-filter": () =>
+      import("src/components/Filters/ScheduleFilter.vue"),
+  },
 };
 </script>
 

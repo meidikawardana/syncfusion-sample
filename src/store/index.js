@@ -1,13 +1,15 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
+import Schedule from "./tsp/Schedule";
+
 Vue.use(Vuex);
 
 let store = null;
 export default function (/* { ssrContext } */) {
   store = new Vuex.Store({
     modules: {
-      // example
+      Schedule,
     },
     // enable strict mode (adds overhead!)
     // for dev mode only
