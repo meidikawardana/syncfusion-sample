@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.14.0",
-    "@syncfusion/ej2-vue-gantt": "^20.1.56",
+    "@syncfusion/ej2-vue-gantt": "20.2.38",
     "axios": "^0.21.1",
     "core-js": "^3.22.0",
     "quasar": "^1.19.0",
