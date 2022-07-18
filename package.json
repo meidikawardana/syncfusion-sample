@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.14.0",
+    "@syncfusion/ej2-vue-dropdowns": "^20.2.38",
     "@syncfusion/ej2-vue-gantt": "20.2.38",
     "axios": "^0.21.1",
     "core-js": "^3.22.0",

@@ -15,6 +15,7 @@
         <div class="row">
           <div class="col-12">
             <schedule-filter @done="onFilteredData" />
+            <my-gantt-column-chooser grid-id="TspScheduleGantt" />
           </div>
         </div>
         <!-- Gantt -->
