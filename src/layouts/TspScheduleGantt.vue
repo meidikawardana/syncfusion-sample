@@ -26,6 +26,7 @@
                 ref="gantt"
                 id="TspScheduleGantt"
                 :height="ganttHeight"
+                :enablePersistence="false"
                 :enableVirtualization="true"
                 :dataSource="data"
                 :taskFields="ganttSettings.taskFields"
