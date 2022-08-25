@@ -15,9 +15,29 @@
         <div class="row">
           <div class="col-12">
             <schedule-filter @done="onFilteredData" />
-            <my-gantt-column-chooser grid-id="TspScheduleGantt" />
           </div>
         </div>
+
+        <div class="row" style="margin-bottom: 10px">
+          <div class="col-12">
+            <q-btn
+              id="show"
+              cssClass="e-info"
+              @click="show"
+              style="margin-right: 12px"
+              v-if="!isTestColumnVisible"
+              >Show Call Off Column</q-btn
+            >
+            <q-btn
+              id="hide"
+              cssClass="e-info"
+              @click="hide"
+              v-if="isTestColumnVisible"
+              >Hide Call Off Column</q-btn
+            >
+          </div>
+        </div>
+
         <!-- Gantt -->
         <div class="row">
           <div class="col-12">
@@ -49,7 +69,7 @@
                 :projectStartDate="ganttSettings.projectStartDate"
                 :projectEndDate="ganttSettings.projectEndDate"
                 clipMode="EllipsisWithTooltip"
-                :highlightWeekends="true"
+                :highlightWeekends="false"
                 :enableMultiTaskbar="false"
                 :allowFiltering="true"
                 :allowReordering="true"
@@ -64,6 +84,7 @@
                 :rowHeight="ganttSettings.rowHeight"
                 :splitterSettings="ganttSettings.splitterSettings"
                 :load="gantt().load"
+                :dataBound="dataBoundGantt"
                 :queryTaskbarInfo="gantt().queryTaskbarInfo"
                 :contextMenuItems="ganttSettings.contextMenuItems"
                 :contextMenuClick="gantt().contextMenuClick"
@@ -402,6 +423,7 @@ export default {
       openDeleteModal: false,
       deleteData: [],
       ganttHeight: "450px",
+      isTestColumnVisible: true,
     };
   },
   provide: {
@@ -420,6 +442,34 @@ export default {
   },
   methods: {
     ...mapMutations("Schedule", ["SET_OBJECT_ID"]),
+    dataBoundGantt: function () {
+      console.log("--dataBoundGantt");
+    },
+    show: function (e) {
+      var ganttChart =
+        document.getElementById("TspScheduleGantt").ej2_instances[0];
+      ganttChart.showColumn(["calloff_id"]);
+      ganttChart.columns.filter(
+        (item) => item.headerText === "Call Off #"
+      )[0].visible = true;
+      ganttChart.treeGrid.refreshColumns();
+      this.isTestColumnVisible = true;
+    },
+    hide: function (e) {
+      var ganttChart =
+        document.getElementById("TspScheduleGantt").ej2_instances[0];
+      ganttChart.hideColumn(["calloff_id"]);
+      ganttChart.columns.filter(
+        (item) => item.headerText === "Call Off #"
+      )[0].visible = false;
+      console.log("--visib", ganttChart.columns);
+      ganttChart.treeGrid.refreshColumns();
+      console.log(
+        "--the-model",
+        window.localStorage.getItem("gantt" + "TspScheduleGantt")
+      );
+      this.isTestColumnVisible = false;
+    },
   },
   computed: {},
   created() {

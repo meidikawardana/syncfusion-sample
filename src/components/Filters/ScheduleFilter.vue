@@ -10,6 +10,7 @@
             color="primary"
             @click.prevent="onSearch"
             :loading="loading"
+            style="display: none"
           ></q-btn>
         </div>
       </div>
