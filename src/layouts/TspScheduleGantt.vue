@@ -83,7 +83,7 @@
                 :taskbarHeight="ganttSettings.taskbarHeight"
                 :rowHeight="ganttSettings.rowHeight"
                 :splitterSettings="ganttSettings.splitterSettings"
-                :load="gantt().load"
+                :load="load"
                 :dataBound="dataBoundGantt"
                 :queryTaskbarInfo="gantt().queryTaskbarInfo"
                 :contextMenuItems="ganttSettings.contextMenuItems"
@@ -469,6 +469,16 @@ export default {
         window.localStorage.getItem("gantt" + "TspScheduleGantt")
       );
       this.isTestColumnVisible = false;
+    },
+    load: function () {
+      const ganttObj =
+        document.getElementById("TspScheduleGantt").ej2_instances[0];
+      ganttObj.timelineSettings.timelineUnitSize = 20;
+      ganttObj.treeGrid.filterSettings.type = "Excel";
+
+      this.isTestColumnVisible = ganttObj.columns.filter(
+        (item) => item.headerText === "Call Off #"
+      )[0].visible;
     },
   },
   computed: {},

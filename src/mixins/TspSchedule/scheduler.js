@@ -354,12 +354,6 @@ export default {
     gantt: function () {
       const self = this;
       return {
-        load: function (args) {
-          const ganttObj = document.getElementById(self.objectID)
-            .ej2_instances[0];
-          ganttObj.timelineSettings.timelineUnitSize = 20;
-          ganttObj.treeGrid.filterSettings.type = "Excel";
-        },
         rowDataBoundGantt: function (args) {
           if (args.data.taskData.is_calloff) {
             args.row.style.background = "#83c5be";
