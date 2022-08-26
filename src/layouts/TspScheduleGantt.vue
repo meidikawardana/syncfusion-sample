@@ -442,9 +442,7 @@ export default {
   },
   methods: {
     ...mapMutations("Schedule", ["SET_OBJECT_ID"]),
-    dataBoundGantt: function () {
-      console.log("--dataBoundGantt");
-    },
+    dataBoundGantt: function () {},
     show: function (e) {
       var ganttChart =
         document.getElementById("TspScheduleGantt").ej2_instances[0];
