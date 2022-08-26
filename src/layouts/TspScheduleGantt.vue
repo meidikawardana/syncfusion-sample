@@ -47,7 +47,7 @@
                 id="TspScheduleGantt"
                 :height="ganttHeight"
                 :enablePersistence="false"
-                :enableVirtualization="false"
+                :enableVirtualization="true"
                 :dataSource="data"
                 :taskFields="ganttSettings.taskFields"
                 :timelineSettings="ganttSettings.timelineSettings"
