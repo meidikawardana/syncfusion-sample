@@ -33,7 +33,7 @@
             :editSettings="editSettings"
             :selectionSettings="selectionOptions"
             :height="height"
-            :frozenColumns="0"
+            :frozenColumns="8"
             :allowExcelExport="true"
             :allowResizing="true"
             :allowMultiSorting="true"
