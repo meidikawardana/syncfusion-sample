@@ -1,7 +1,9 @@
 import { date } from "quasar";
-import { mapState, mapActions, mapMutations, mapGetters } from "vuex";
+import { mapState, mapActions } from "pinia";
+import { defineComponent } from "vue";
+import { useScheduleStore } from "src/stores/tsp/Schedule";
 
-export default {
+export default defineComponent({
   data() {
     return {
       data: [],
@@ -162,13 +164,13 @@ export default {
     };
   },
   computed: {
-    ...mapState("Schedule", ["objectID", "schedules", "timeOffTable"]),
+    ...mapState(useScheduleStore, ["objectID", "schedules", "timeOffTable"]),
     height() {
       return this.$q.screen.height - 270 + "px";
     },
   },
   methods: {
-    ...mapActions("Schedule", [
+    ...mapActions(useScheduleStore, [
       "getSchedules",
       "storeSchedule",
       "updateSchedule",
@@ -179,7 +181,7 @@ export default {
       "reorderRowsSchedule",
       "getResources",
     ]),
-    ...mapMutations("Schedule", ["SET_SCHEDULES"]),
+    ...mapActions(useScheduleStore, ["SET_SCHEDULES"]),
     onFilteredData(args) {
       this.data = [...args];
     },
@@ -692,4 +694,4 @@ export default {
       };
     },
   },
-};
+});

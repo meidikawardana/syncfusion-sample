@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { defineAsyncComponent } from "vue";
 export default {
   data() {
     return {
@@ -26,8 +27,9 @@ export default {
   },
   props: ["gridId"],
   components: {
-    "column-chooser-modal": () =>
-      import("components/Buttons/Gantt/ScheduleColumnChooserModal.vue"),
+    "column-chooser-modal": defineAsyncComponent(() =>
+      import("components/Buttons/Gantt/ScheduleColumnChooserModal.vue")
+    ),
   },
 };
 </script>

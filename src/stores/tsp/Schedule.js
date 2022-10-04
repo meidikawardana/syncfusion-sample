@@ -1,4 +1,5 @@
 import { axiosInstance } from "boot/axios";
+import { defineStore } from "pinia";
 
 const state = {
   action: "create",
@@ -119,10 +120,10 @@ const actions = {
 
 const getters = {};
 
-export default {
-  namespaced: true,
-  state,
-  mutations,
+export const useScheduleStore = defineStore("Schedule", {
+  state: () => {
+    return state;
+  },
   actions,
   getters,
-};
+});

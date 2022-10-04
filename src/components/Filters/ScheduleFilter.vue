@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
 import scheduler from "src/mixins/TspSchedule/scheduler";
 export default {
   name: "ScheduleFilter",

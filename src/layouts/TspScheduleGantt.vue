@@ -375,43 +375,20 @@
             </div>
           </div>
         </div>
-        <q-dialog v-model="openEventModal">
-          <task-modal
-            :data="modalData"
-            :action="action"
-            @close="openEventModal = false"
-          />
-        </q-dialog>
       </q-page>
     </q-page-container>
   </q-layout>
 </template>
 
 <script>
+import { defineComponent } from "vue";
 import { date } from "quasar";
+import GanttState from "src/mixins/GanttState";
 import scheduler from "../mixins/TspSchedule/scheduler";
-import { mapMutations } from "vuex";
-import {
-  GanttPlugin,
-  ContextMenu,
-  Edit,
-  Filter,
-  Sort,
-  Selection,
-  ExcelExport,
-  Reorder,
-  Resize,
-  Toolbar,
-  VirtualScroll,
-} from "@syncfusion/ej2-vue-gantt";
 
-import Vue from "vue";
-
-Vue.use(GanttPlugin);
-
-export default {
-  name: "technical_services_schedule",
-  mixins: [toolbar, scheduler],
+export default defineComponent({
+  name: "TspSchedule",
+  mixins: [GanttState, scheduler],
   data() {
     return {
       action: "create",
@@ -422,26 +399,171 @@ export default {
       batchEditData: [],
       openDeleteModal: false,
       deleteData: [],
+      data: [],
+      ganttSettings: {
+        taskMode: "Auto",
+        taskFields: {
+          id: "id",
+          name: "task_name",
+          startDate: "start_date",
+          endDate: "finish_date",
+          duration: "duration",
+          dependency: "dependency",
+          parentID: "parent_id",
+          resourceInfo: "resources",
+          baselineStartDate: "baseline_start",
+          baselineEndDate: "baseline_finish",
+          manual: "is_manual",
+          notes: "comments",
+        },
+        rowHeight: 30,
+        taskbarHeight: 29,
+        resourceFields: {
+          id: "resourceId",
+          name: "name",
+        },
+        tooltipSettings: {
+          showTooltip: true,
+          taskbar: "tooltipTemplate",
+        },
+        selectionSettings: {
+          type: "Multiple",
+          mode: "Row",
+        },
+        sortSettings: {
+          columns: [{ field: "start_date", direction: "Ascending" }],
+        },
+        filterSettings: {
+          type: "Excel",
+          hierarchyMode: "Parent",
+        },
+        gridLines: "Horizontal",
+        resources: [],
+        timelineSettings: {
+          topTier: {
+            format: "dd/MM/yy",
+            unit: "Week",
+          },
+          bottomTier: {
+            unit: "Day",
+          },
+          timelineUnitSize: 20,
+        },
+        labelSettings: {
+          rightLabel: "resources", // eslint-disable-line
+          taskLabel: "${taskData.project_scope}", // eslint-disable-line
+        },
+        dateFormat: "dd/MM/yy",
+        editSettings: {
+          allowAdding: true,
+          allowEditing: true,
+          allowDeleting: true,
+          mode: "Auto",
+          allowTaskbarEditing: true,
+          showDeleteConfirmDialog: false,
+          newRowPosition: "Child",
+        },
+        validation: {
+          calloff_id: { required: true, number: true },
+          taskName: { required: true },
+        },
+        dateParams: { type: "date", format: "dd/MM/yy" },
+        enableContextMenu: true,
+        contextMenuItems: [
+          {
+            text: "Task Information",
+            target: ".e-content",
+            id: "taskInformation",
+            iconCss: "e-icons e-edit",
+          },
+          {
+            text: "Batch Edit",
+            target: ".e-content",
+            id: "batchEdit",
+            iconCss: "e-icons e-user-defined",
+          },
+          {
+            text: "Delete Task",
+            target: ".e-content",
+            id: "delete",
+            iconCss: "e-icons e-delete",
+          },
+          "AutoFitAll",
+          "AutoFit",
+          "Save",
+          "Cancel",
+          "DeleteDependency",
+          {
+            text: "Add Task",
+            target: ".e-content",
+            id: "newAdd",
+            iconCss: "e-icons new",
+            items: [
+              {
+                text: "Below",
+                target: ".e-content",
+                id: "addBelow",
+                iconCss: "e-icons add-below",
+              },
+              {
+                text: "Copy",
+                target: ".e-content",
+                id: "addCopy",
+                iconCss: "e-icons add-copy",
+              },
+              {
+                text: "Child",
+                target: ".e-content",
+                id: "addChild",
+                iconCss: "e-icons add-child",
+              },
+            ],
+          },
+          { text: "Collapse the Row", target: ".e-content", id: "collapserow" },
+          { text: "Expand the Row", target: ".e-content", id: "expandrow" },
+          { text: "Hide Column", target: ".e-gridheader", id: "hidecols" },
+          {
+            text: "Add TimeOff",
+            target: ".e-content",
+            id: "timeoff",
+            iconCss: "e-icons time-off",
+          },
+          {
+            text: "Add Quarantine",
+            target: ".e-content",
+            id: "quarantine",
+            iconCss: "e-icons quarantine",
+          },
+          {
+            text: "Validate Tasks",
+            target: ".e-content",
+            id: "validate",
+            iconCss: "e-icons validate",
+          },
+          // { text: 'Save Call Off', target: '.e-content', id: 'resavecalloff', iconCss: 'e-icons resavecalloff' }
+        ],
+        projectStartDate: new Date(),
+        projectEndDate: new Date(2023, 11, 31),
+        splitterSettings: {
+          position: "50%",
+        },
+        toolbar: [
+          "ZoomIn",
+          "ZoomOut",
+          "ZoomToFit",
+          "ExpandAll",
+          "CollapseAll",
+          "PrevTimeSpan",
+          "NextTimeSpan",
+          "Indent",
+          "Outdent",
+        ],
+      },
       ganttHeight: "450px",
       isTestColumnVisible: true,
     };
   },
-  provide: {
-    gantt: [
-      ContextMenu,
-      Edit,
-      Filter,
-      Sort,
-      Selection,
-      ExcelExport,
-      Reorder,
-      Resize,
-      Toolbar,
-      VirtualScroll,
-    ],
-  },
   methods: {
-    ...mapMutations("Schedule", ["SET_OBJECT_ID"]),
     dataBoundGantt: function () {},
     show: function (e) {
       var ganttChart =
@@ -481,7 +603,6 @@ export default {
   },
   computed: {},
   created() {
-    this.SET_OBJECT_ID("TspScheduleGantt");
     this.ganttSettings.projectStartDate = new Date();
     this.ganttSettings.projectEndDate = date.addToDate(
       this.ganttSettings.projectStartDate,
@@ -493,7 +614,7 @@ export default {
     "schedule-filter": () =>
       import("src/components/Filters/ScheduleFilter.vue"),
   },
-};
+});
 </script>
 
 <style lang="scss"></style>
