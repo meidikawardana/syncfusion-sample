@@ -128,7 +128,6 @@
                 clipMode="EllipsisWithTooltip"
               ></e-column>
 
-              <!--
               <e-column headerText="Jan-22" :columns="jan22Cols"></e-column>
               <e-column headerText="Feb-22" :columns="feb22Cols"></e-column>
               <e-column headerText="Mar-22" :columns="mar22Cols"></e-column>
@@ -154,8 +153,8 @@
               <e-column headerText="Oct-23" :columns="oct23Cols"></e-column>
               <e-column headerText="Nov-23" :columns="nov23Cols"></e-column>
               <e-column headerText="Dec-23" :columns="dec23Cols"></e-column>
-              -->
 
+              <!--
               <e-column
                 headerText="Jan-22"
                 :columns="null"
@@ -277,6 +276,7 @@
                 :columns="null"
                 :visible="false"
               ></e-column>
+              -->
             </e-columns>
           </ejs-grid>
         </div>

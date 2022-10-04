@@ -17,7 +17,7 @@ const actions = {
   getResourceDemands(payload) {
     return new Promise((resolve, reject) => {
       axiosInstance
-        .get("/src/stores/snop/resource-demands-without-month-columns.json", {
+        .get("/src/stores/snop/resource-demands.json", {
           params: payload,
         })
         .then((response) => {
