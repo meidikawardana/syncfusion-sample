@@ -1,6 +1,6 @@
-# Gantt Sample (gantt-sample)
+# Syncfusion Sample (syncfusion-sample)
 
-Sample for Gantt Syncfusion Bug Showcase
+Sample for Syncfusion Bug Showcase
 
 ## Install the dependencies
 
