@@ -6,13 +6,19 @@ const routes = [
   },
 
   {
-    path: "/",
+    path: "/resource-demand",
     component: () => import("src/pages/ResourceDemand/ResourceDemandsGrid.vue"),
     meta: {
       title: "Resource Demand",
       name: "Resources Demand",
       requiresAuth: true,
     },
+  },
+
+  {
+    path: "/",
+    component: () => import("layouts/TspDemandPivot.vue"),
+    children: [{ path: "", component: () => import("pages/Index.vue") }],
   },
 
   // Always leave this as last one,
