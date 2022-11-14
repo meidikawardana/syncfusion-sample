@@ -2,7 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <q-btn flat dense round icon="menu" aria-label="Menu" />
+        <q-btn aria-label="Menu" dense flat icon="menu" round />
 
         <q-toolbar-title> Gantt Sample </q-toolbar-title>
 
@@ -21,18 +21,18 @@
         <div class="row" style="margin-bottom: 10px">
           <div class="col-12">
             <q-btn
+              v-if="!isTestColumnVisible"
               id="show"
               cssClass="e-info"
-              @click="show"
               style="margin-right: 12px"
-              v-if="!isTestColumnVisible"
+              @click="show"
               >Show Call Off Column</q-btn
             >
             <q-btn
+              v-if="isTestColumnVisible"
               id="hide"
               cssClass="e-info"
               @click="hide"
-              v-if="isTestColumnVisible"
               >Hide Call Off Column</q-btn
             >
           </div>
@@ -43,132 +43,131 @@
           <div class="col-12">
             <div class="max-grid-height">
               <ejs-gantt
-                ref="gantt"
                 id="TspScheduleGantt"
-                :height="ganttHeight"
-                :enablePersistence="false"
-                :enableVirtualization="true"
-                :dataSource="data"
-                :taskFields="ganttSettings.taskFields"
-                :timelineSettings="ganttSettings.timelineSettings"
-                :readOnly="ganttSettings.readOnly"
-                :editSettings="ganttSettings.editSettings"
-                :sortSettings="ganttSettings.sortSettings"
-                :taskMode="ganttSettings.taskMode"
-                :toolbar="ganttSettings.toolbar"
-                :dateFormat="ganttSettings.dateFormat"
-                :resourceFields="ganttSettings.resourceFields"
-                :resources="ganttSettings.resources"
-                :selectionSettings="ganttSettings.selectionSettings"
-                :labelSettings="ganttSettings.labelSettings"
-                :gridLines="ganttSettings.gridLines"
-                :tooltipSettings="ganttSettings.tooltipSettings"
-                :filterSettings="ganttSettings.filterSettings"
-                :renderBaseline="true"
-                baselineColor="#e9c46a"
-                :projectStartDate="ganttSettings.projectStartDate"
-                :projectEndDate="ganttSettings.projectEndDate"
-                clipMode="EllipsisWithTooltip"
-                :highlightWeekends="false"
-                :enableMultiTaskbar="false"
-                :allowFiltering="true"
-                :allowReordering="true"
-                :allowSorting="true"
-                :allowResizing="true"
-                :allowSelection="true"
-                :includeWeekend="true"
-                :treeColumnIndex="1"
-                :enableContextMenu="ganttSettings.enableContextMenu"
-                :allowRowDragAndDrop="false"
-                :taskbarHeight="ganttSettings.taskbarHeight"
-                :rowHeight="ganttSettings.rowHeight"
-                :splitterSettings="ganttSettings.splitterSettings"
-                :load="load"
-                :dataBound="dataBoundGantt"
-                :queryTaskbarInfo="gantt().queryTaskbarInfo"
-                :contextMenuItems="ganttSettings.contextMenuItems"
-                :contextMenuClick="gantt().contextMenuClick"
-                :contextMenuOpen="gantt().contextMenuOpen"
-                :allowExcelExport="true"
+                ref="gantt"
                 :actionBegin="gantt().actionBegin"
                 :actionComplete="gantt().actionComplete"
-                :rowDataBound="gantt().rowDataBoundGantt"
+                :allowExcelExport="true"
+                :allowFiltering="true"
+                :allowReordering="true"
+                :allowResizing="true"
+                :allowRowDragAndDrop="false"
+                :allowSelection="true"
+                :allowSorting="true"
+                baselineColor="#e9c46a"
+                clipMode="EllipsisWithTooltip"
+                :contextMenuClick="gantt().contextMenuClick"
+                :contextMenuItems="ganttSettings.contextMenuItems"
+                :contextMenuOpen="gantt().contextMenuOpen"
+                :dateFormat="ganttSettings.dateFormat"
+                :editSettings="ganttSettings.editSettings"
+                :enableContextMenu="ganttSettings.enableContextMenu"
+                :enableMultiTaskbar="false"
+                :enablePersistence="false"
+                :enableVirtualization="true"
                 :excelQueryCellInfo="gantt().excelQueryCellInfo"
+                :filterSettings="ganttSettings.filterSettings"
+                :gridLines="ganttSettings.gridLines"
+                :height="ganttHeight"
+                :highlightWeekends="false"
+                :includeWeekend="true"
+                :labelSettings="ganttSettings.labelSettings"
+                :load="load"
+                :projectEndDate="ganttSettings.projectEndDate"
+                :projectStartDate="ganttSettings.projectStartDate"
+                :queryTaskbarInfo="gantt().queryTaskbarInfo"
+                :readOnly="ganttSettings.readOnly"
+                :renderBaseline="true"
+                :resourceFields="ganttSettings.resourceFields"
+                :resources="ganttSettings.resources"
+                :rowDataBound="gantt().rowDataBoundGantt"
+                :rowHeight="ganttSettings.rowHeight"
+                :selectionSettings="ganttSettings.selectionSettings"
+                :sortSettings="ganttSettings.sortSettings"
+                :splitterSettings="ganttSettings.splitterSettings"
+                :taskFields="ganttSettings.taskFields"
+                :taskMode="ganttSettings.taskMode"
+                :taskbarHeight="ganttSettings.taskbarHeight"
+                :timelineSettings="ganttSettings.timelineSettings"
+                :toolbar="ganttSettings.toolbar"
+                :tooltipSettings="ganttSettings.tooltipSettings"
+                :treeColumnIndex="1"
               >
                 <e-columns>
                   <e-column
+                    :allowEditing="false"
                     field="id"
                     headerText="ID"
                     :isPrimaryKey="true"
-                    :allowEditing="false"
-                    width="90"
                     :visible="true"
+                    width="90"
                   />
                   <e-column
+                    :allowEditing="false"
                     field="calloff_id"
                     headerText="Call Off #"
-                    type="number"
                     textAlign="Left"
-                    width="120"
-                    :allowEditing="false"
+                    type="number"
                     :validationRules="ganttSettings.validation.calloff_id"
+                    :visible="true"
+                    width="120"
                   />
                   <e-column
+                    :allowEditing="false"
+                    :customAttributes="{ class: 'disabledColumnCss' }"
                     field="project_name"
                     headerText="Project Name"
                     type="string"
-                    width="90"
                     :visible="false"
-                    :allowEditing="false"
-                    :customAttributes="{ class: 'disabledColumnCss' }"
+                    width="90"
                   />
                   <e-column
+                    :allowEditing="false"
+                    :customAttributes="{ class: 'disabledColumnCss' }"
                     field="project_scope"
                     headerText="Project Scope"
                     type="string"
-                    width="90"
                     :visible="false"
-                    :allowEditing="false"
-                    :customAttributes="{ class: 'disabledColumnCss' }"
+                    width="90"
                   />
                   <e-column
                     field="task_name"
                     headerText="Task Name"
                     type="string"
-                    width="200"
                     :validationRules="ganttSettings.validation.taskName"
+                    width="200"
                   />
                   <e-column
+                    defaultValue="1"
                     field="duration"
                     headerText="Duration"
                     type="number"
-                    defaultValue="1"
                     :visible="false"
                   />
                   <e-column
+                    :edit="ganttSettings.dateParams"
+                    editType="datepickeredit"
                     field="start_date"
+                    :format="ganttSettings.formatDateOptions"
                     headerText="Start Date"
                     type="date"
                     width="100"
-                    editType="datepickeredit"
-                    :edit="ganttSettings.dateParams"
-                    :format="ganttSettings.formatDateOptions"
                   />
                   <e-column
+                    :edit="ganttSettings.dateParams"
+                    editType="datepickeredit"
                     field="finish_date"
+                    :format="ganttSettings.formatDateOptions"
                     headerText="Finish Date"
                     type="date"
                     width="100"
-                    editType="datepickeredit"
-                    :edit="ganttSettings.dateParams"
-                    :format="ganttSettings.formatDateOptions"
                   />
                   <e-column
                     field="tags"
                     headerText="Tags"
                     type="string"
-                    width="100"
                     :visible="false"
+                    width="100"
                   />
                   <e-column
                     field="resources"
@@ -176,24 +175,24 @@
                     width="180"
                   />
                   <e-column
+                    :edit="ganttSettings.dateParams"
+                    editType="datepickeredit"
                     field="baseline_start"
+                    :format="ganttSettings.formatDateOptions"
                     headerText="Baseline Start"
                     type="date"
-                    width="100"
-                    editType="datepickeredit"
-                    :edit="ganttSettings.dateParams"
-                    :format="ganttSettings.formatDateOptions"
                     :visible="false"
+                    width="100"
                   />
                   <e-column
+                    :edit="ganttSettings.dateParams"
+                    editType="datepickeredit"
                     field="baseline_finish"
+                    :format="ganttSettings.formatDateOptions"
                     headerText="Baseline Finish"
                     type="date"
-                    width="100"
-                    editType="datepickeredit"
-                    :edit="ganttSettings.dateParams"
-                    :format="ganttSettings.formatDateOptions"
                     :visible="false"
+                    width="100"
                   />
                   <e-column
                     field="dependency"
@@ -202,57 +201,57 @@
                     :visible="false"
                   />
                   <e-column
+                    :defaultValue="false"
+                    displayAsCheckBox="true"
+                    editType="booleanedit"
                     field="shift_id"
                     headerText="Night Shift?"
                     type="boolean"
-                    editType="booleanedit"
-                    displayAsCheckBox="true"
-                    :defaultValue="false"
                     :visible="false"
                   />
                   <e-column
+                    :allowEditing="false"
+                    :customAttributes="{ class: 'disabledColumnCss' }"
                     field="category_id"
                     headerText="Category ID"
-                    :allowEditing="false"
-                    :customAttributes="{ class: 'disabledColumnCss' }"
-                    :visible="false"
                     :showInColumnChooser="false"
+                    :visible="false"
                   />
                   <e-column
-                    field="category"
-                    headerText="Category"
                     :allowEditing="false"
                     :customAttributes="{ class: 'disabledColumnCss' }"
+                    field="category"
+                    headerText="Category"
                     :visible="true"
                   />
                   <e-column
+                    :allowEditing="false"
+                    :customAttributes="{ class: 'disabledColumnCss' }"
                     field="discipline_id"
                     headerText="Discipline ID"
-                    :allowEditing="false"
-                    :customAttributes="{ class: 'disabledColumnCss' }"
-                    :visible="false"
                     :showInColumnChooser="false"
+                    :visible="false"
                   />
                   <e-column
+                    :allowEditing="false"
+                    :customAttributes="{ class: 'disabledColumnCss' }"
                     field="discipline"
                     headerText="Discipline"
-                    :allowEditing="false"
-                    :customAttributes="{ class: 'disabledColumnCss' }"
                     :visible="false"
                   />
                   <e-column
+                    :allowEditing="false"
+                    :customAttributes="{ class: 'disabledColumnCss' }"
                     field="role_id"
                     headerText="Role ID"
-                    :allowEditing="false"
-                    :customAttributes="{ class: 'disabledColumnCss' }"
-                    :visible="false"
                     :showInColumnChooser="false"
+                    :visible="false"
                   />
                   <e-column
-                    field="role"
-                    headerText="Role"
                     :allowEditing="false"
                     :customAttributes="{ class: 'disabledColumnCss' }"
+                    field="role"
+                    headerText="Role"
                     :visible="false"
                   />
                   <e-column
@@ -262,42 +261,42 @@
                     :visible="false"
                   />
                   <e-column
+                    defaultValue="1"
                     field="quantity"
                     headerText="Quantity"
                     type="number"
-                    defaultValue="1"
                     :visible="false"
                   />
                   <e-column
+                    :allowEditing="false"
+                    :customAttributes="{ class: 'disabledColumnCss' }"
                     field="client"
                     headerText="Client"
                     type="string"
                     :visible="false"
-                    :allowEditing="false"
-                    :customAttributes="{ class: 'disabledColumnCss' }"
                   />
                   <e-column
+                    :allowEditing="false"
+                    :customAttributes="{ class: 'disabledColumnCss' }"
                     field="created_by"
                     headerText="CallOff Created By"
                     type="string"
                     :visible="false"
-                    :allowEditing="false"
-                    :customAttributes="{ class: 'disabledColumnCss' }"
                   />
                   <e-column
+                    :allowEditing="false"
+                    :customAttributes="{ class: 'disabledColumnCss' }"
                     field="calloff_demand_status"
                     headerText="Demand Status"
-                    :customAttributes="{ class: 'disabledColumnCss' }"
-                    :allowEditing="false"
                     :visible="true"
                   />
                   <e-column
+                    :defaultValue="false"
+                    displayAsCheckBox="true"
+                    editType="booleanedit"
                     field="is_calloff"
                     headerText="Is CallOff?"
                     type="boolean"
-                    editType="booleanedit"
-                    displayAsCheckBox="true"
-                    :defaultValue="false"
                     :visible="false"
                   />
                   <e-column
@@ -307,68 +306,68 @@
                     :visible="false"
                   />
                   <e-column
+                    :allowEditing="false"
+                    :customAttributes="{ class: 'disabledColumnCss' }"
                     field="location"
                     headerText="Project Location"
                     type="string"
                     :visible="false"
-                    :customAttributes="{ class: 'disabledColumnCss' }"
-                    :allowEditing="false"
                   />
                   <e-column
+                    :allowEditing="false"
+                    :customAttributes="{ class: 'disabledColumnCss' }"
                     field="wbs"
                     headerText="WBS"
                     type="string"
                     :visible="false"
-                    :customAttributes="{ class: 'disabledColumnCss' }"
-                    :allowEditing="false"
                   />
                   <e-column
+                    :allowEditing="false"
+                    :customAttributes="{ class: 'disabledColumnCss' }"
                     field="field_location"
                     headerText="Field Location"
                     type="string"
                     :visible="false"
-                    :customAttributes="{ class: 'disabledColumnCss' }"
-                    :allowEditing="false"
                   />
                   <e-column
+                    :allowEditing="false"
+                    :customAttributes="{ class: 'disabledColumnCss' }"
                     field="allocation_type"
                     headerText="Allocation Type"
                     type="string"
                     :visible="false"
-                    :customAttributes="{ class: 'disabledColumnCss' }"
-                    :allowEditing="false"
                   />
                   <e-column
+                    :allowEditing="false"
+                    :customAttributes="{ class: 'disabledColumnCss' }"
                     field="resource_location"
                     headerText="TSP Country"
                     type="string"
                     :visible="false"
-                    :customAttributes="{ class: 'disabledColumnCss' }"
-                    :allowEditing="false"
                   />
                   <e-column
+                    :allowEditing="false"
+                    :customAttributes="{ class: 'disabledColumnCss' }"
                     field="phase"
                     headerText="Project Phase"
                     type="string"
                     :visible="true"
-                    :customAttributes="{ class: 'disabledColumnCss' }"
-                    :allowEditing="false"
                   />
                   <e-column
+                    :allowEditing="false"
+                    :customAttributes="{ class: 'disabledColumnCss' }"
                     field="resource_department"
                     headerText="Resource Department"
                     type="string"
                     :visible="false"
-                    :customAttributes="{ class: 'disabledColumnCss' }"
-                    :allowEditing="false"
                   />
                   <e-column
+                    :allowEditing="false"
+                    :customAttributes="{ class: 'disabledColumnCss' }"
                     field="sep_id"
                     headerText="SEP#"
                     type="number"
                     :visible="false"
-                    :customAttributes="{ class: 'disabledColumnCss' }"
-                    :allowEditing="false"
                   />
                 </e-columns>
               </ejs-gantt>
@@ -381,17 +380,17 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
-import { date } from "quasar";
-import GanttState from "src/mixins/GanttState";
-import scheduler from "../mixins/TspSchedule/scheduler";
+import { defineAsyncComponent } from 'vue'
+import { date } from 'quasar'
+import GanttState from 'src/mixins/GanttState'
+import scheduler from '../mixins/TspSchedule/scheduler'
 
-export default defineComponent({
-  name: "TspSchedule",
+export default {
+  name: 'TspSchedule',
   mixins: [GanttState, scheduler],
   data() {
     return {
-      action: "create",
+      action: 'create',
       searchForm: {},
       openEventModal: false,
       modalData: {},
@@ -399,222 +398,229 @@ export default defineComponent({
       batchEditData: [],
       openDeleteModal: false,
       deleteData: [],
-      data: [],
       ganttSettings: {
-        taskMode: "Auto",
+        taskMode: 'Auto',
         taskFields: {
-          id: "id",
-          name: "task_name",
-          startDate: "start_date",
-          endDate: "finish_date",
-          duration: "duration",
-          dependency: "dependency",
-          parentID: "parent_id",
-          resourceInfo: "resources",
-          baselineStartDate: "baseline_start",
-          baselineEndDate: "baseline_finish",
-          manual: "is_manual",
-          notes: "comments",
+          id: 'id',
+          name: 'task_name',
+          startDate: 'start_date',
+          endDate: 'finish_date',
+          duration: 'duration',
+          dependency: 'dependency',
+          parentID: 'parent_id',
+          resourceInfo: 'resources',
+          baselineStartDate: 'baseline_start',
+          baselineEndDate: 'baseline_finish',
+          manual: 'is_manual',
+          notes: 'comments',
         },
         rowHeight: 30,
         taskbarHeight: 29,
         resourceFields: {
-          id: "resourceId",
-          name: "name",
+          id: 'resourceId',
+          name: 'name',
         },
         tooltipSettings: {
           showTooltip: true,
-          taskbar: "tooltipTemplate",
+          taskbar: 'tooltipTemplate',
         },
         selectionSettings: {
-          type: "Multiple",
-          mode: "Row",
+          type: 'Multiple',
+          mode: 'Row',
         },
         sortSettings: {
-          columns: [{ field: "start_date", direction: "Ascending" }],
+          columns: [{ field: 'start_date', direction: 'Ascending' }],
         },
         filterSettings: {
-          type: "Excel",
-          hierarchyMode: "Parent",
+          type: 'Excel',
+          hierarchyMode: 'Parent',
         },
-        gridLines: "Horizontal",
+        gridLines: 'Horizontal',
         resources: [],
         timelineSettings: {
           topTier: {
-            format: "dd/MM/yy",
-            unit: "Week",
+            format: 'dd/MM/yy',
+            unit: 'Week',
           },
           bottomTier: {
-            unit: "Day",
+            unit: 'Day',
           },
           timelineUnitSize: 20,
         },
         labelSettings: {
-          rightLabel: "resources", // eslint-disable-line
-          taskLabel: "${taskData.project_scope}", // eslint-disable-line
+          rightLabel: 'resources', // eslint-disable-line
+          taskLabel: '${taskData.project_scope}', // eslint-disable-line
         },
-        dateFormat: "dd/MM/yy",
+        dateFormat: 'dd/MM/yy',
         editSettings: {
           allowAdding: true,
           allowEditing: true,
           allowDeleting: true,
-          mode: "Auto",
+          mode: 'Auto',
           allowTaskbarEditing: true,
           showDeleteConfirmDialog: false,
-          newRowPosition: "Child",
+          newRowPosition: 'Child',
         },
         validation: {
           calloff_id: { required: true, number: true },
           taskName: { required: true },
         },
-        dateParams: { type: "date", format: "dd/MM/yy" },
+        dateParams: { type: 'date', format: 'dd/MM/yy' },
         enableContextMenu: true,
         contextMenuItems: [
           {
-            text: "Task Information",
-            target: ".e-content",
-            id: "taskInformation",
-            iconCss: "e-icons e-edit",
+            text: 'Task Information',
+            target: '.e-content',
+            id: 'taskInformation',
+            iconCss: 'e-icons e-edit',
           },
           {
-            text: "Batch Edit",
-            target: ".e-content",
-            id: "batchEdit",
-            iconCss: "e-icons e-user-defined",
+            text: 'Batch Edit',
+            target: '.e-content',
+            id: 'batchEdit',
+            iconCss: 'e-icons e-user-defined',
           },
           {
-            text: "Delete Task",
-            target: ".e-content",
-            id: "delete",
-            iconCss: "e-icons e-delete",
+            text: 'Delete Task',
+            target: '.e-content',
+            id: 'delete',
+            iconCss: 'e-icons e-delete',
           },
-          "AutoFitAll",
-          "AutoFit",
-          "Save",
-          "Cancel",
-          "DeleteDependency",
+          'AutoFitAll',
+          'AutoFit',
+          'Save',
+          'Cancel',
+          'DeleteDependency',
           {
-            text: "Add Task",
-            target: ".e-content",
-            id: "newAdd",
-            iconCss: "e-icons new",
+            text: 'Add Task',
+            target: '.e-content',
+            id: 'newAdd',
+            iconCss: 'e-icons new',
             items: [
               {
-                text: "Below",
-                target: ".e-content",
-                id: "addBelow",
-                iconCss: "e-icons add-below",
+                text: 'Below',
+                target: '.e-content',
+                id: 'addBelow',
+                iconCss: 'e-icons add-below',
               },
               {
-                text: "Copy",
-                target: ".e-content",
-                id: "addCopy",
-                iconCss: "e-icons add-copy",
+                text: 'Copy',
+                target: '.e-content',
+                id: 'addCopy',
+                iconCss: 'e-icons add-copy',
               },
               {
-                text: "Child",
-                target: ".e-content",
-                id: "addChild",
-                iconCss: "e-icons add-child",
+                text: 'Child',
+                target: '.e-content',
+                id: 'addChild',
+                iconCss: 'e-icons add-child',
               },
             ],
           },
-          { text: "Collapse the Row", target: ".e-content", id: "collapserow" },
-          { text: "Expand the Row", target: ".e-content", id: "expandrow" },
-          { text: "Hide Column", target: ".e-gridheader", id: "hidecols" },
+          { text: 'Collapse the Row', target: '.e-content', id: 'collapserow' },
+          { text: 'Expand the Row', target: '.e-content', id: 'expandrow' },
+          { text: 'Hide Column', target: '.e-gridheader', id: 'hidecols' },
           {
-            text: "Add TimeOff",
-            target: ".e-content",
-            id: "timeoff",
-            iconCss: "e-icons time-off",
+            text: 'Add TimeOff',
+            target: '.e-content',
+            id: 'timeoff',
+            iconCss: 'e-icons time-off',
           },
           {
-            text: "Add Quarantine",
-            target: ".e-content",
-            id: "quarantine",
-            iconCss: "e-icons quarantine",
+            text: 'Add Quarantine',
+            target: '.e-content',
+            id: 'quarantine',
+            iconCss: 'e-icons quarantine',
           },
           {
-            text: "Validate Tasks",
-            target: ".e-content",
-            id: "validate",
-            iconCss: "e-icons validate",
+            text: 'Validate Tasks',
+            target: '.e-content',
+            id: 'validate',
+            iconCss: 'e-icons validate',
           },
-          // { text: 'Save Call Off', target: '.e-content', id: 'resavecalloff', iconCss: 'e-icons resavecalloff' }
+          {
+            text: 'Save Call Off',
+            target: '.e-content',
+            id: 'resaveCalloff',
+            iconCss: 'e-icons resavecalloff',
+          },
         ],
         projectStartDate: new Date(),
         projectEndDate: new Date(2023, 11, 31),
         splitterSettings: {
-          position: "50%",
+          position: '50%',
         },
         toolbar: [
-          "ZoomIn",
-          "ZoomOut",
-          "ZoomToFit",
-          "ExpandAll",
-          "CollapseAll",
-          "PrevTimeSpan",
-          "NextTimeSpan",
-          "Indent",
-          "Outdent",
+          'ZoomIn',
+          'ZoomOut',
+          'ZoomToFit',
+          'ExpandAll',
+          'CollapseAll',
+          'PrevTimeSpan',
+          'NextTimeSpan',
+          'Indent',
+          'Outdent',
         ],
       },
-      ganttHeight: "450px",
+      ganttHeight: '450px',
       isTestColumnVisible: true,
-    };
+    }
   },
   methods: {
-    dataBoundGantt: function () {},
-    show: function (e) {
+    show: function () {
       var ganttChart =
-        document.getElementById("TspScheduleGantt").ej2_instances[0];
-      ganttChart.showColumn(["calloff_id"]);
+        document.getElementById('TspScheduleGantt').ej2_instances[0]
+      ganttChart.showColumn(['Call Off #'])
       ganttChart.columns.filter(
-        (item) => item.headerText === "Call Off #"
-      )[0].visible = true;
-      ganttChart.treeGrid.refreshColumns();
-      this.isTestColumnVisible = true;
+        (item) => item.headerText === 'Call Off #'
+      )[0].visible = true
+      ganttChart.treeGrid.refreshColumns()
+      this.isTestColumnVisible = true
     },
-    hide: function (e) {
+    hide: function () {
       var ganttChart =
-        document.getElementById("TspScheduleGantt").ej2_instances[0];
-      ganttChart.hideColumn(["calloff_id"]);
+        document.getElementById('TspScheduleGantt').ej2_instances[0]
+      ganttChart.hideColumn(['Call Off #'])
       ganttChart.columns.filter(
-        (item) => item.headerText === "Call Off #"
-      )[0].visible = false;
-      console.log("--visib", ganttChart.columns);
-      ganttChart.treeGrid.refreshColumns();
-      console.log(
-        "--the-model",
-        window.localStorage.getItem("gantt" + "TspScheduleGantt")
-      );
-      this.isTestColumnVisible = false;
+        (item) => item.headerText === 'Call Off #'
+      )[0].visible = false
+      ganttChart.treeGrid.refreshColumns()
+      this.isTestColumnVisible = false
     },
     load: function () {
       const ganttObj =
-        document.getElementById("TspScheduleGantt").ej2_instances[0];
-      ganttObj.timelineSettings.timelineUnitSize = 20;
-      ganttObj.treeGrid.filterSettings.type = "Excel";
-
+        document.getElementById('TspScheduleGantt').ej2_instances[0]
+      ganttObj.timelineSettings.timelineUnitSize = 20
+      ganttObj.treeGrid.filterSettings.type = 'Excel'
       this.isTestColumnVisible = ganttObj.columns.filter(
-        (item) => item.headerText === "Call Off #"
-      )[0].visible;
+        (item) => item.headerText === 'Call Off #'
+      )[0].visible
+    },
+    async onFilteredData(args) {
+      console.time('--gantt-process')
+
+      const ganttObj =
+        document.getElementById('TspScheduleGantt').ej2_instances[0]
+      ganttObj.dataSource = [...args]
+      ganttObj.refresh()
+      console.timeEnd('--gantt-process')
     },
   },
   computed: {},
   created() {
-    this.ganttSettings.projectStartDate = new Date();
+    this.ganttSettings.projectStartDate = new Date()
     this.ganttSettings.projectEndDate = date.addToDate(
       this.ganttSettings.projectStartDate,
       { days: 60 }
-    );
-    this.ganttHeight = this.$q.screen.height - 270 + "px";
+    )
+    this.ganttHeight = this.$q.screen.height - 270 + 'px'
   },
   components: {
-    "schedule-filter": () =>
-      import("src/components/Filters/ScheduleFilter.vue"),
+    ScheduleFilter: defineAsyncComponent(() =>
+      import('src/components/Filters/ScheduleFilter.vue')
+    ),
   },
-});
+}
 </script>
 
 <style lang="scss"></style>

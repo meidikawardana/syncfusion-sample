@@ -1,12 +1,12 @@
 const routes = [
   {
-    path: "/tsp",
+    path: "/",
     component: () => import("layouts/TspScheduleGantt.vue"),
     children: [{ path: "", component: () => import("pages/Index.vue") }],
   },
 
   {
-    path: "/",
+    path: "/resource-demands",
     component: () => import("src/pages/ResourceDemand/ResourceDemandsGrid.vue"),
     meta: {
       title: "Resource Demand",

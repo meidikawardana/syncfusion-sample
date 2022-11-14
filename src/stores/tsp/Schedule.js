@@ -107,7 +107,7 @@ const actions = {
   getSchedules({ commit }, payload) {
     return new Promise((resolve, reject) => {
       axiosInstance
-        .get("/small-data-source.json", { params: payload })
+        .get("/large-data-source.json", { params: payload })
         .then((response) => {
           resolve(response.data.data);
         })
