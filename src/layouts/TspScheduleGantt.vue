@@ -31,10 +31,13 @@
             <q-btn
               v-if="isTestColumnVisible"
               id="hide"
+              color="secondary"
               cssClass="e-info"
+              style="margin-right: 12px"
               @click="hide"
               >Hide Call Off Column</q-btn
             >
+            <q-btn>Dummy Button</q-btn>
           </div>
         </div>
 
