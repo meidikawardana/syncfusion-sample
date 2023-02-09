@@ -16,6 +16,12 @@
         <!-- Toolbar -->
         <filter-bar @filtered="onFilter" />
 
+        <!--
+          :actionBegin='actionBegin'
+          clipMode='EllipsisWithTooltip'
+          :filterSettings='filterSettings'
+        -->
+
         <!-- Grid -->
         <div class="max-grid-height">
           <ejs-grid
