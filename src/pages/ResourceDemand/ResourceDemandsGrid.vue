@@ -21,26 +21,27 @@
           <ejs-grid
             ref="grid"
             id="ResourceDemandGrid"
-            :dataSource="data"
-            :enablePersistence="true"
+            :allowExcelExport="true"
+            :allowFiltering="true"
+            :allowMultiSorting="true"
             :allowPaging="true"
-            :pageSettings="pageSettings"
+            :allowResizing="true"
             :allowSelection="true"
             :allowSorting="true"
-            :sortSettings="sortSettings"
-            :allowFiltering="true"
-            :filterSettings="filterSettings"
-            :editSettings="editSettings"
-            :selectionSettings="selectionOptions"
-            :height="height"
-            :frozenColumns="0"
-            :allowExcelExport="true"
-            :allowResizing="true"
-            :allowMultiSorting="true"
-            :enableAutoFill="true"
-            :cellSelected="cellSelected"
-            :cellSave="cellSave"
             :beforeBatchSave="beforeBatchSave"
+            :cellSave="cellSave"
+            :cellSelected="cellSelected"
+            :dataSource="data"
+            :editSettings="editSettings"
+            :enableAutoFill="true"
+            :enablePersistence="false"
+            :frozenColumns="frozenCols"
+            :height="height"
+            :pageSettings="pageSettings"
+            :selectionSettings="selectionOptions"
+            :sortSettings="sortSettings"
+            :allowRowDragAndDrop="false"
+            :filterSettings="filterSettings"
           >
             <e-columns>
               <e-column
@@ -70,7 +71,7 @@
                 foreignKeyField="id"
                 :dataSource="clients"
                 :allowEditing="false"
-                width="100"
+                width="150"
                 clipMode="EllipsisWithTooltip"
                 :customAttributes="disabledColumnAttribute"
               ></e-column>
@@ -78,7 +79,7 @@
                 field="sep_id"
                 headerText="SEP#"
                 type="number"
-                width="100"
+                width="150"
                 :visible="true"
                 clipMode="EllipsisWithTooltip"
                 :allowEditing="false"
@@ -117,165 +118,15 @@
                 field="scope"
                 headerText="Project Scope"
                 type="string"
-                width="200"
+                width="300"
                 clipMode="EllipsisWithTooltip"
               ></e-column>
               <e-column
                 field="comments"
                 headerText="Comments"
                 type="string"
-                width="130"
+                width="800"
                 clipMode="EllipsisWithTooltip"
-              ></e-column>
-
-              <!--
-              <e-column headerText="Jan-22" :columns="jan22Cols"></e-column>
-              <e-column headerText="Feb-22" :columns="feb22Cols"></e-column>
-              <e-column headerText="Mar-22" :columns="mar22Cols"></e-column>
-              <e-column headerText="Apr-22" :columns="apr22Cols"></e-column>
-              <e-column headerText="May-22" :columns="may22Cols"></e-column>
-              <e-column headerText="Jun-22" :columns="jun22Cols"></e-column>
-              <e-column headerText="Jul-22" :columns="jul22Cols"></e-column>
-              <e-column headerText="Aug-22" :columns="aug22Cols"></e-column>
-              <e-column headerText="Sep-22" :columns="sep22Cols"></e-column>
-              <e-column headerText="Oct-22" :columns="oct22Cols"></e-column>
-              <e-column headerText="Nov-22" :columns="nov22Cols"></e-column>
-              <e-column headerText="Dec-22" :columns="dec22Cols"></e-column>
-
-              <e-column headerText="Jan-23" :columns="jan23Cols"></e-column>
-              <e-column headerText="Feb-23" :columns="feb23Cols"></e-column>
-              <e-column headerText="Mar-23" :columns="mar23Cols"></e-column>
-              <e-column headerText="Apr-23" :columns="apr23Cols"></e-column>
-              <e-column headerText="May-23" :columns="may23Cols"></e-column>
-              <e-column headerText="Jun-23" :columns="jun23Cols"></e-column>
-              <e-column headerText="Jul-23" :columns="jul23Cols"></e-column>
-              <e-column headerText="Aug-23" :columns="aug23Cols"></e-column>
-              <e-column headerText="Sep-23" :columns="sep23Cols"></e-column>
-              <e-column headerText="Oct-23" :columns="oct23Cols"></e-column>
-              <e-column headerText="Nov-23" :columns="nov23Cols"></e-column>
-              <e-column headerText="Dec-23" :columns="dec23Cols"></e-column>
-              -->
-
-              <e-column
-                headerText="Jan-22"
-                :columns="null"
-                :visible="false"
-              ></e-column>
-              <e-column
-                headerText="Feb-22"
-                :columns="null"
-                :visible="false"
-              ></e-column>
-              <e-column
-                headerText="Mar-22"
-                :columns="null"
-                :visible="false"
-              ></e-column>
-              <e-column
-                headerText="Apr-22"
-                :columns="null"
-                :visible="false"
-              ></e-column>
-              <e-column
-                headerText="May-22"
-                :columns="null"
-                :visible="false"
-              ></e-column>
-              <e-column
-                headerText="Jun-22"
-                :columns="null"
-                :visible="false"
-              ></e-column>
-              <e-column
-                headerText="Jul-22"
-                :columns="null"
-                :visible="false"
-              ></e-column>
-              <e-column
-                headerText="Aug-22"
-                :columns="null"
-                :visible="false"
-              ></e-column>
-              <e-column
-                headerText="Sep-22"
-                :columns="null"
-                :visible="false"
-              ></e-column>
-              <e-column
-                headerText="Oct-22"
-                :columns="null"
-                :visible="false"
-              ></e-column>
-              <e-column
-                headerText="Nov-22"
-                :columns="null"
-                :visible="false"
-              ></e-column>
-              <e-column
-                headerText="Dec-22"
-                :columns="null"
-                :visible="false"
-              ></e-column>
-
-              <e-column
-                headerText="Jan-23"
-                :columns="null"
-                :visible="false"
-              ></e-column>
-              <e-column
-                headerText="Feb-23"
-                :columns="null"
-                :visible="false"
-              ></e-column>
-              <e-column
-                headerText="Mar-23"
-                :columns="null"
-                :visible="false"
-              ></e-column>
-              <e-column
-                headerText="Apr-23"
-                :columns="null"
-                :visible="false"
-              ></e-column>
-              <e-column
-                headerText="May-23"
-                :columns="null"
-                :visible="false"
-              ></e-column>
-              <e-column
-                headerText="Jun-23"
-                :columns="null"
-                :visible="false"
-              ></e-column>
-              <e-column
-                headerText="Jul-23"
-                :columns="null"
-                :visible="false"
-              ></e-column>
-              <e-column
-                headerText="Aug-23"
-                :columns="null"
-                :visible="false"
-              ></e-column>
-              <e-column
-                headerText="Sep-23"
-                :columns="null"
-                :visible="false"
-              ></e-column>
-              <e-column
-                headerText="Oct-23"
-                :columns="null"
-                :visible="false"
-              ></e-column>
-              <e-column
-                headerText="Nov-23"
-                :columns="null"
-                :visible="false"
-              ></e-column>
-              <e-column
-                headerText="Dec-23"
-                :columns="null"
-                :visible="false"
               ></e-column>
             </e-columns>
           </ejs-grid>
@@ -332,6 +183,8 @@ export default defineComponent({
       confirmDeleteModal: false,
       openResourceDemandModal: false,
       demandId: null,
+
+      frozenCols: 4,
 
       data: [],
       originalData: [],
@@ -536,5 +389,4 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>
