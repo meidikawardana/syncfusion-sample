@@ -46,7 +46,7 @@
             :pageSettings="pageSettings"
             :selectionSettings="selectionOptions"
             :sortSettings="sortSettings"
-            :allowRowDragAndDrop="false"
+            :allowRowDragAndDrop="true"
             :filterSettings="filterSettings"
           >
             <e-columns>
