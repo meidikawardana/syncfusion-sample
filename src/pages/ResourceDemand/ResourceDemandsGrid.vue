@@ -41,13 +41,14 @@
             :editSettings="editSettings"
             :enableAutoFill="true"
             :enablePersistence="false"
-            :frozenColumns="frozenCols"
+            :frozenColumns="0"
             :height="height"
             :pageSettings="pageSettings"
             :selectionSettings="selectionOptions"
             :sortSettings="sortSettings"
-            :allowRowDragAndDrop="true"
+            :allowRowDragAndDrop="false"
             :filterSettings="filterSettings"
+            :allowReordering="true"
           >
             <e-columns>
               <e-column
