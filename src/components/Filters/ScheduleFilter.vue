@@ -6,7 +6,6 @@
           <q-btn
             type="submit"
             label="Search"
-            ref="onSearchBtn"
             color="primary"
             @click.prevent="onSearch"
             :loading="loading"
@@ -20,7 +19,8 @@
 
 <script>
 import scheduler from "src/mixins/TspSchedule/scheduler";
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   name: "ScheduleFilter",
   mixins: [scheduler],
   data() {
@@ -63,5 +63,5 @@ export default {
     if (!(this.$route.params.sep_id > 1000)) this.searchForm.sep_id = null;
     if (!this.$route.params.calloff) this.onSearch();
   },
-};
+});
 </script>

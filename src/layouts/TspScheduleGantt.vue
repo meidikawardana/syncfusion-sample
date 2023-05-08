@@ -94,7 +94,25 @@
                 :actionComplete="gantt().actionComplete"
                 :rowDataBound="gantt().rowDataBoundGantt"
                 :excelQueryCellInfo="gantt().excelQueryCellInfo"
+                :taskbarTemplate="'taskbarTemplate'"
+                :parentTaskbarTemplate="'parentTaskbarTemplate'"
               >
+                <template
+                  v-slot:parentTaskbarTemplate
+                >
+                  <div class="e-gantt-child-taskbar e-custom-parent" style="height:100%;border-radius:5px;">
+                    <span class="e-task-label"
+                      style="position:absolute;top:5px;font-size:12px;text-overflow:ellipsis;height:90%;overflow:hidden;width:100%;background-color:blue;"></span>
+                  </div>
+                </template>
+                <template v-slot:taskbarTemplate='{data}'>
+                  <tsp-schedule-taskbar-template :label='taskbarTemplateLabel(data)' />
+                </template>
+                <template v-slot:tooltipTemplate='{data}'>
+                  <tsp-schedule-tooltip-template
+                    :data='data'
+                  />
+                </template>
                 <e-columns>
                   <e-column
                     field="id"
@@ -381,7 +399,7 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { defineAsyncComponent, defineComponent } from "vue";
 import { date } from "quasar";
 import GanttState from "src/mixins/GanttState";
 import scheduler from "../mixins/TspSchedule/scheduler";
@@ -600,6 +618,9 @@ export default defineComponent({
         (item) => item.headerText === "Call Off #"
       )[0].visible;
     },
+    taskbarTemplateLabel(data) {
+      return 'Temp Label'
+    },
   },
   computed: {},
   created() {
@@ -611,8 +632,9 @@ export default defineComponent({
     this.ganttHeight = this.$q.screen.height - 270 + "px";
   },
   components: {
-    "schedule-filter": () =>
-      import("src/components/Filters/ScheduleFilter.vue"),
+    ScheduleFilter: defineAsyncComponent(() => import("src/components/Filters/ScheduleFilter.vue")),
+    TspScheduleTaskbarTemplate: defineAsyncComponent(() => import("src/components/Templates/TspScheduleTaskbarTemplate.vue")),
+    TspScheduleTooltipTemplate: defineAsyncComponent(() => import("src/components/Templates/TspScheduleTooltipTemplate.vue")),
   },
 });
 </script>
