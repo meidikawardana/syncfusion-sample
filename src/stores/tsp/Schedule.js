@@ -1,4 +1,4 @@
-import { axiosInstance } from "boot/axios";
+import { http } from "boot/axios";
 import { defineStore } from "pinia";
 
 const state = {
@@ -106,7 +106,7 @@ const mutations = {
 const actions = {
   getSchedules({ commit }, payload) {
     return new Promise((resolve, reject) => {
-      axiosInstance
+      http
         .get("/small-data-source.json", { params: payload })
         .then((response) => {
           resolve(response.data.data);

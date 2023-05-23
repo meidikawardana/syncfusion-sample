@@ -1,6 +1,12 @@
 const routes = [
   {
     path: "/",
+    component: () => import("layouts/Demo.vue"),
+    children: [{ path: "", component: () => import("pages/Index.vue") }],
+  },
+
+  {
+    path: "/tsp-schedule",
     component: () => import("layouts/TspScheduleGantt.vue"),
     children: [{ path: "", component: () => import("pages/Index.vue") }],
   },
