@@ -2838,7 +2838,7 @@ $ddl-bigger-small-list-font-size: 13px !default;
     display: block;
   }
 
-  // Small Size 
+  // Small Size
 
   .e-small .e-ddl#{&}.e-popup,
   .e-input-group.e-ddl.e-small {
@@ -2939,7 +2939,7 @@ $ddl-bigger-small-list-font-size: 13px !default;
     font-family: 'e-icons';
   }
 }
-  
+
 $input-skin-name: 'material' !default;
 $zero-value: 0 !default;
 $one-value: 1px !default;
@@ -6002,7 +6002,7 @@ $filled-input-clear-icon-active-color: rgba($grey-light-font, .87) !default;
     @include input-ripple-animation;
   }
 
-  // sass-lint:disable no-vendor-prefixes  
+  // sass-lint:disable no-vendor-prefixes
   input.e-input#{$css}::-ms-clear,
   .e-float-input input::-ms-clear,
   .e-float-input.e-control-wrapper input::-ms-clear {
@@ -14640,7 +14640,7 @@ $filled-input-clear-icon-active-color: rgba($grey-light-font, .87) !default;
     color: inherit;
   }
 
-  // sass-lint:disable no-vendor-prefixes 
+  // sass-lint:disable no-vendor-prefixes
   /*! Added color to textbox for disbaled state */
   .e-float-input:not(.e-disabled) input[disabled],
   .e-float-input.e-control-wrapper:not(.e-disabled) input[disabled],
@@ -14907,7 +14907,7 @@ $filled-input-clear-icon-active-color: rgba($grey-light-font, .87) !default;
     }
   }
 
-  // sass-lint:disable no-vendor-prefixes 
+  // sass-lint:disable no-vendor-prefixes
   .e-input-group:not(.e-disabled) .e-input-group-icon:active,
   .e-input-group.e-control-wrapper:not(.e-disabled) .e-input-group-icon:active {
     background: $input-group-pressed-bg;
@@ -15484,7 +15484,7 @@ $filled-input-clear-icon-active-color: rgba($grey-light-font, .87) !default;
     }
   }
 
-  // sass-lint:disable no-vendor-prefixes 
+  // sass-lint:disable no-vendor-prefixes
   .e-input-group.e-input-focus:not(.e-success):not(.e-warning):not(.e-error),
   .e-input-group.e-control-wrapper.e-input-focus:not(.e-success):not(.e-warning):not(.e-error) {
     @if $input-skin-name != 'material' {
@@ -15504,7 +15504,7 @@ $filled-input-clear-icon-active-color: rgba($grey-light-font, .87) !default;
     }
   }
 
-  // sass-lint:disable no-vendor-prefixes 
+  // sass-lint:disable no-vendor-prefixes
   .e-input-group.e-input-focus:not(.e-success):not(.e-warning).e-error,
   .e-input-group.e-control-wrapper.e-input-focus:not(.e-success):not(.e-warning).e-error {
     @if $input-skin-name == 'bootstrap' or $input-skin-name == 'bootstrap4' or $input-skin-name == 'bootstrap5' or $input-skin-name == 'FluentUI' {
@@ -15513,7 +15513,7 @@ $filled-input-clear-icon-active-color: rgba($grey-light-font, .87) !default;
     }
   }
 
-  // sass-lint:disable no-vendor-prefixes 
+  // sass-lint:disable no-vendor-prefixes
   .e-input-group.e-input-focus:not(.e-error):not(.e-warning).e-success,
   .e-input-group.e-control-wrapper.e-input-focus:not(.e-error):not(.e-warning).e-success {
     @if $input-skin-name == 'bootstrap' or $input-skin-name == 'bootstrap4' or $input-skin-name == 'bootstrap5' or $input-skin-name == 'FluentUI' {
@@ -15522,7 +15522,7 @@ $filled-input-clear-icon-active-color: rgba($grey-light-font, .87) !default;
     }
   }
 
-  // sass-lint:disable no-vendor-prefixes 
+  // sass-lint:disable no-vendor-prefixes
   .e-input-group.e-input-focus:not(.e-success):not(.e-error).e-warning,
   .e-input-group.e-control-wrapper.e-input-focus:not(.e-success):not(.e-error).e-warning {
     @if $input-skin-name == 'bootstrap' or $input-skin-name == 'bootstrap4' or $input-skin-name == 'bootstrap5' or $input-skin-name == 'FluentUI' {
@@ -15597,7 +15597,7 @@ $filled-input-clear-icon-active-color: rgba($grey-light-font, .87) !default;
     }
   }
 
-  // sass-lint:disable no-vendor-prefixes 
+  // sass-lint:disable no-vendor-prefixes
   .e-input-group:not(.e-disabled):active:not(.e-success):not(.e-warning):not(.e-error),
   .e-input-group.e-control-wrapper:not(.e-disabled):active:not(.e-success):not(.e-warning):not(.e-error) {
     @if $input-skin-name == 'fabric' or $input-skin-name == 'FluentUI' or $input-skin-name == 'bootstrap' or $input-skin-name == 'bootstrap4' or $input-skin-name == 'bootstrap5' or $input-skin-name == 'highcontrast' {
@@ -16914,7 +16914,7 @@ $filled-input-clear-icon-active-color: rgba($grey-light-font, .87) !default;
     }
   }
 
-  // Filled input border color changes 
+  // Filled input border color changes
 
   .e-filled.e-input-group:hover:not(.e-success):not(.e-warning):not(.e-error):not(.e-disabled):not(.e-float-icon-left),
   .e-filled.e-input-group.e-control-wrapper:hover:not(.e-success):not(.e-warning):not(.e-error):not(.e-disabled):not(.e-float-icon-left),
@@ -16990,7 +16990,7 @@ $filled-input-clear-icon-active-color: rgba($grey-light-font, .87) !default;
     }
   }
 
-  // Filled input floating label color configuration 
+  // Filled input floating label color configuration
 
   .e-filled label.e-float-text,
   .e-filled.e-float-input:not(.e-error):not(.e-input-focus) input:not(:focus):valid ~ label.e-float-text.e-label-bottom,
@@ -18027,7 +18027,7 @@ $filled-input-clear-icon-active-color: rgba($grey-light-font, .87) !default;
     }
   }
 
-  // Filled input ripple action 
+  // Filled input ripple action
 
   .e-filled.e-input-group.e-float-icon-left:not(.e-float-input)::before,
   .e-filled.e-input-group.e-float-icon-left:not(.e-float-input)::after,
@@ -18836,7 +18836,7 @@ $filled-input-clear-icon-active-color: rgba($grey-light-font, .87) !default;
   }
 }
 
-//default 
+//default
 //undefined
 //enddefault
 
@@ -19731,7 +19731,7 @@ $ddl-small-list-header-font-size: $ddl-group-list-font-size !default;
   }
 }
 
-//default 
+//default
 //enddefault
 $btn-color: rgba($grey-black, .87) !default;
 $btn-font-weight: 500 !default;
@@ -26683,7 +26683,7 @@ $split-btn-icon-btn-padding-bigger: 9px !default;
     }
   }
 }
-  
+
 $numeric-skin-name: 'material' !default;
 $numeric-input-icon-size: 12px !default;
 $numeric-input-bigger-icon-size: 12px !default;
@@ -31445,7 +31445,7 @@ $cpicker-blazor-bigger-input-margin: calc(3.425% - 2.38px) !default;
   }
 }
 
-//default 
+//default
 //enddefault
 $cmenu-back-icon: '\e977' !default;
 $cmenu-back-icon-margin: 16px !default;
@@ -35736,7 +35736,7 @@ $listview-template-multiline-avatar-top: 1.0666em !default;
   content: '\e85b';
 }
 
-//default 
+//default
 $range-bg-color: $grey-white !default;
 $range-primary-color: $primary !default;
 $range-primary-font-color: $primary-font !default;
@@ -38905,7 +38905,7 @@ $dialog-enable-resize-padding-bottom: 15px !default;
     }
   }
 
-  //Bigger Style 
+  //Bigger Style
   .e-bigger.e-dialog,
   #{if(&, '&', '*')}.e-bigger .e-dialog {
     #{if(&, '&', '*')} .e-dlg-header-content {
@@ -51550,7 +51550,7 @@ $menu-header-icon-padding: 0 16px !default;
           transform: rotate(-180deg);
           text-indent: 0;
 		    }
-		
+
 		    & .e-menu-item[aria-expanded = "false"] .e-caret {
 			    -webkit-transition: -webkit-transform .3s ease-in-out;
           transition: -webkit-transform .3s ease-in-out;
@@ -52512,7 +52512,7 @@ $breadcrumb-popup-item-hover-outline: 0 solid rgba($grey-light-font, .12) !defau
       .e-breadcrumb-icon {
         display: flex;
         flex-grow: 1;
-        justify-content: end;
+        justify-content: flex-end;
      }
    }
 
@@ -54699,7 +54699,7 @@ $ddt-bigger-outline-chip-padding: 8px 15px !default;
     }
   }
 }
-    
+
 $ddl-chip-mobile-close-font: 16px !default;
 $ddl-multiselect-skin-name: 'material' !default;
 $ddl-delim-font-size: 14px !default;
@@ -60448,7 +60448,7 @@ $pager-focus-shadow: 0 0 0 1px $grey-500 inset !default;
       -webkit-tap-highlight-color: $pager-bg-color;
     }
 
-    // sass-lint:enable-all  
+    // sass-lint:enable-all
 
     .e-pp,
     .e-np,
@@ -61531,7 +61531,7 @@ $grid-xl-radio-margin-top: 0 !default;
     }
    }
 }
-  
+
 $group-row-bg-stcolor: #ececec !default;
 $group-row-bg-color: $grey-50 !default;
 $grid-font-size: 13px !default;
@@ -61995,7 +61995,7 @@ $grid-rtl-textwrap-column-menu-margin: -13px -13px -23px -3px !default;
 $grid-filter-checkbox-width: 0 !default;
 $grid-filter-checkbox-white-space: nowrap !default;
 
-// group animator 
+// group animator
 $grid-group-animator-bigger-drop-height: 54px;
 $grid-group-animator-bigger-cell-margin: 15px 0 15px 0 !default;
 $grid-animator-bigger-area-margin: 15px;
@@ -62825,7 +62825,7 @@ $grid-dropitems-count-margin-left: -8px !default;
       position: fixed;
       z-index: 10;
     }
-    
+
     .e-groupdroparea.e-sticky {
         opacity: 1;
     }
@@ -62949,7 +62949,7 @@ $grid-dropitems-count-margin-left: -8px !default;
           min-height: initial;
 
           & .e-tbar-btn:hover,
-          & .e-tbar-btn:active, 
+          & .e-tbar-btn:active,
           & .e-tbar-btn:focus,
           & .e-search-icon:hover,
           & .e-search-icon:active,
@@ -63010,7 +63010,7 @@ $grid-dropitems-count-margin-left: -8px !default;
                 & .e-search-icon {
                   margin-top: $grid-responsive-search-icon-margin;
                   padding-left: $grid-responsive-search-left-padding;
-                } 
+                }
               }
             }
           }
@@ -63118,7 +63118,7 @@ $grid-dropitems-count-margin-left: -8px !default;
         vertical-align: $grid-columnchooser-toolbar-icon-vertical-align;
     }
 
-    
+
     .e-group-animator .e-icon-drag.e-icons {
         margin-left: $grid-animator-drag-margin-left;
     }
@@ -66235,7 +66235,7 @@ $grid-dropitems-count-margin-left: -8px !default;
 .e-bigger .e-responsive-dialog.e-ressortdiv,
 .e-bigger.e-responsive-dialog.e-ressortdiv {
   .e-dlg-header-content .e-dlg-header .e-res-custom-element .e-res-apply-btn {
-    padding-top: 0;  
+    padding-top: 0;
     @if $grid-skin == 'tailwind' {
       margin-top: -8px;
     }
@@ -75073,7 +75073,7 @@ $field-list-text-transform: none !default;
           }
           //sass-lint:disable-all
           float: right !important;
-          margin: 0;          
+          margin: 0;
           margin-right: 12px !important;
           //sass-lint:enable-all
         }
@@ -75244,7 +75244,7 @@ $field-list-text-transform: none !default;
       color: $error-font-color !important;
       font-weight: 600 !important;
     }
-    
+
     .e-pivot-calc-input.e-empty-field:-moz-placeholder {
         color: $error-font-color !important;
         font-weight: 600 !important;
@@ -75329,7 +75329,7 @@ $field-list-text-transform: none !default;
                 }
 
                 .e-list-text {
-                  margin-bottom: 0; 
+                  margin-bottom: 0;
                   overflow: unset;
                   width: 100%;
                 }
@@ -75394,7 +75394,7 @@ $field-list-text-transform: none !default;
                     margin-left: 0;
                     margin-right: 0;
                   }
-                } 
+                }
               }
             }
 
@@ -75741,7 +75741,7 @@ $field-list-text-transform: none !default;
         float: left;
         margin: 0;
 
-        
+
         @if ($skin-name == 'FluentUI') {
           margin-left: 0 !important;
           margin-right: 0 !important;
@@ -76038,7 +76038,7 @@ $field-list-text-transform: none !default;
       }
 
       .e-value-field-div-content {
-        padding: 0 24px 10px;          
+        padding: 0 24px 10px;
 
         .e-field-option-wrapper {
           .e-field-name-text-wrapper {
@@ -76076,9 +76076,9 @@ $field-list-text-transform: none !default;
               @if ($skin-name == 'tailwind') or ($skin-name == 'bootstrap5') or ($skin-name == 'FluentUI') {
                 padding-bottom: 4px;
               }
-      
-              
-      
+
+
+
             }
 
             .e-caption-input-text {
@@ -76574,7 +76574,7 @@ $field-list-text-transform: none !default;
       }
 
       .e-value-field-div-content {
-        padding: 0 $field-list-editor-search-padding-size 10px;          
+        padding: 0 $field-list-editor-search-padding-size 10px;
 
         .e-field-option-container {
           .e-field-name-text-container {
@@ -80104,9 +80104,9 @@ $field-list-text-transform: none !default;
           width: 24px !important;
           @if($skin-name=='bootstrap5') or ($skin-name == 'FluentUI') {
             padding-left: 12px;
-            padding-right: 16px;          
+            padding-right: 16px;
           }
-        
+
           @if ($skin-name == 'tailwind') {
             margin-bottom: 0 !important;
           }
@@ -80434,7 +80434,7 @@ $field-list-text-transform: none !default;
           padding: $field-list-tree-header-padding 0 0 $field-list-bigger-icon-to-icon-padding;
           width: 24px;
         }
-        
+
         // sass-lint:disable-all
         @if ($skin-name == 'FluentUI') {
           .e-sort-none {
@@ -82085,7 +82085,7 @@ $pivotgrid-bigger-button-icon-wrapper-size: 20px !default;
          -moz-flex-wrap: wrap;
           -ms-flex-wrap: wrap;
                 display: inline-block;
-              flex-wrap: wrap;     
+              flex-wrap: wrap;
     }
     // sass-lint:enable-all
   }
@@ -82321,7 +82321,7 @@ $pivotgrid-bigger-button-icon-wrapper-size: 20px !default;
     // sass-lint:enable-all
   }
 }
-  
+
 
 @include export-module('pivotview-theme') {
 
@@ -82579,7 +82579,7 @@ $pivotgrid-bigger-button-icon-wrapper-size: 20px !default;
       @if ($skin-name == 'tailwind') {
         padding-left: 12px;
       }
-      
+
       &.e-active {
         .e-icons {
           color: $pivotgrid-button-active-icon-color !important;
@@ -82657,7 +82657,7 @@ $pivotgrid-bigger-button-icon-wrapper-size: 20px !default;
         margin-top: 2px;
         padding-left: 8px !important;
       }
-  
+
       @if ($skin-name == 'FluentUI') {
         margin-top: 1px;
       }
@@ -82687,7 +82687,7 @@ $pivotgrid-bigger-button-icon-wrapper-size: 20px !default;
 
           //   &:hover {
           //     color: $pivotgrid-active-color;
-          //   }    
+          //   }
         }
     }
 
@@ -82773,7 +82773,7 @@ $pivotgrid-bigger-button-icon-wrapper-size: 20px !default;
             @if ($pivotgrid-skin == 'bootstrap4') {
               background-color: $pivotgrid-bg-color;
             }
-  
+
             .e-nav-arrow {
               color: $pivotgrid-icon-hover-color !important;
             }
@@ -83081,7 +83081,7 @@ $pivotgrid-bigger-button-icon-wrapper-size: 20px !default;
                 background-color: $pivotgrid-bg-color;
                 border-color: $pivotgrid-border-color;
               }
-    
+
               .e-sort,
               .e-dropdown-icon,
               .e-pv-filter,
@@ -83091,7 +83091,7 @@ $pivotgrid-bigger-button-icon-wrapper-size: 20px !default;
                 color: $pivotgrid-icon-hover-color !important;
               }
             }
-    
+
             &.e-btn-focused {
               background-color: $pivotgrid-focus-color;
               color: $pivotgrid-button-acitve-font-color;
@@ -83100,7 +83100,7 @@ $pivotgrid-bigger-button-icon-wrapper-size: 20px !default;
                 border-color: $pivotgrid-active-border-color;
                 box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
               }
-    
+
               .e-sort,
               .e-dropdown-icon,
               .e-pv-filter,
@@ -83110,7 +83110,7 @@ $pivotgrid-bigger-button-icon-wrapper-size: 20px !default;
                 color: $pivotgrid-icon-focus-color !important;
               }
             }
-    
+
             &:focus,
             &:active {
               background-color: $pivotgrid-focus-color;
@@ -83120,7 +83120,7 @@ $pivotgrid-bigger-button-icon-wrapper-size: 20px !default;
                 border-color: $pivotgrid-active-border-color;
                 box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
               }
-    
+
               .e-sort,
               .e-dropdown-icon,
               .e-pv-filter,
@@ -83130,7 +83130,7 @@ $pivotgrid-bigger-button-icon-wrapper-size: 20px !default;
                 color: $pivotgrid-icon-focus-color !important;
               }
             }
-    
+
             .e-sort,
             .e-dropdown-icon,
             .e-pv-filter,
@@ -83145,25 +83145,25 @@ $pivotgrid-bigger-button-icon-wrapper-size: 20px !default;
               @if ($pivotgrid-skin == 'bootstrap4') {
                 margin-left: 4px;
               }
-    
+
               &:hover {
                 color: $pivotgrid-icon-hover-color;
               }
-    
+
               &.e-disable {
                 display: none;
               }
             }
-    
+
             .e-sort {
               height: $pivotgrid-button-icon-size;
               width: 18px;
-    
+
               &.e-descend {
                 transform: rotateX(180deg);
               }
             }
-    
+
             .e-dropdown-icon {
               margin-top: 1px;
             }
@@ -83230,7 +83230,7 @@ $pivotgrid-bigger-button-icon-wrapper-size: 20px !default;
         }
       }
     }
-    // sass-lint:enable-all  
+    // sass-lint:enable-all
 
     .e-icons:not(.e-frame):not(.e-btn-icon):not(.e-sort):not(.e-dropdown-icon):not(.e-pv-filter):not(.e-pv-filtered):not(.e-remove):not(.e-edit):not(.e-drag) {
       height: auto;
@@ -83642,7 +83642,7 @@ $pivotgrid-bigger-button-icon-wrapper-size: 20px !default;
         height: 36px !important;
         min-height: 36px !important;
 
-        .e-hscroll .e-scroll-nav, 
+        .e-hscroll .e-scroll-nav,
         .e-toolbar-items,
         .e-toolbar-item {
           min-height: 36px !important;
@@ -83789,7 +83789,7 @@ $pivotgrid-bigger-button-icon-wrapper-size: 20px !default;
       @if ($pivotgrid-skin == 'bootstrap4') or ($skin-name == 'bootstrap5') {
         font-size: 12px !important;
       }
-      
+
       &.e-value-sort-icon {
         margin: 0px !important;
 
@@ -83820,7 +83820,7 @@ $pivotgrid-bigger-button-icon-wrapper-size: 20px !default;
 
     // sass-lint:disable-all
 
-    
+
     .e-stackedheadercelldiv,
     .e-stackedheadertext,
     .e-headertext,
@@ -83829,7 +83829,7 @@ $pivotgrid-bigger-button-icon-wrapper-size: 20px !default;
       font-size: $pivotview-bigger-grid-header-font-size;
       font-weight: $pivotview-grid-header-font-weight !important;
     }
-    
+
     .e-grid .e-columnsheader {
       padding-right: 16px !important;
     }
