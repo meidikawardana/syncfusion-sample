@@ -1,5 +1,5 @@
 import { boot } from "quasar/wrappers";
-import axios from "axios";
+import axios, { AxiosInstance } from "axios";
 import axiosRetry from "axios-retry";
 
 let axiosInstance = axios;

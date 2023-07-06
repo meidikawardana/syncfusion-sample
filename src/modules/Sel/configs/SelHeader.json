@@ -1,0 +1,24 @@
+{
+  "status": [
+    { "id": 1, "name": "Pending", "class": "secondary" },
+    { "id": 2, "name": "Approved", "class": "primary" },
+    { "id": 5, "name": "Closed", "class": "primary" },
+    { "id": 4, "name": "Cancelled", "class": "warning" }
+  ],
+  "scopes": [
+    { "id": 1, "name": "ISM" },
+    { "id": 2, "name": "Mobilization" },
+    { "id": 3, "name": "Demob" },
+    { "id": 4, "name": "Overhaul" },
+    { "id": 5, "name": "Mandatory Maintenance" },
+    { "id": 6, "name": "Refurbishment/SN" },
+    { "id": 8, "name": "Spares" }
+  ],
+  "scopesSimplified": [
+    { "id": 1, "name": "ISM" },
+    { "id": 2, "name": "Mobilization" },
+    { "id": 3, "name": "Demob" },
+    { "id": 6, "name": "Refurbishment/SN" },
+    { "id": 8, "name": "Spares" }
+  ]
+}

@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import { axiosRetryInstance } from "boot/axios";
+import locations from './datasets/locations.json'
 
 const state = {
   locations: [],
@@ -31,6 +32,9 @@ const getters = {
   },
   getApacLocations: (state) => {
     return state.locations.filter((element) => element.type === "region");
+  },
+  getLocation: (state) => (id) => {
+    return locations.find((element) => element.id === id)
   },
 };
 

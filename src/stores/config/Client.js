@@ -1,5 +1,6 @@
 import { axiosRetryInstance } from "boot/axios";
 import { defineStore } from "pinia";
+import clients from './datasets/clients.json'
 
 const state = {
   clients: [],
@@ -31,6 +32,9 @@ const getters = {
       return client.description;
     }
     return null;
+  },
+  getClient: (state) => (id) => {
+    return clients.find((element) => element.id === id)
   },
 };
 

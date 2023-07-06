@@ -1,0 +1,52 @@
+{
+  "categories": [
+    { "id": 1, "name": "1. Primary Equipment" },
+    { "id": 2, "name": "2. Running Tools" },
+    { "id": 3, "name": "3. Contingency Tools" },
+    { "id": 4, "name": "4. Test Tools" },
+    { "id": 5, "name": "5. Spares" },
+    { "id": 6, "name": "6. Hand Tools & Consumables" },
+    { "id": 7, "name": "7. Capex Spares" }
+  ],
+
+  "srps": [
+    { "id": false, "name": "No" },
+    { "id": true, "name": "Yes" }
+  ],
+
+  "ownerships": [
+    { "id": 1, "name": "Rental" },
+    { "id": 2, "name": "Client" },
+    { "id": 3, "name": "3rd Party" },
+    { "id": 4, "name": "Services Project" },
+    { "id": 5, "name": "SPS Project" },
+    { "id": 6, "name": "Rental ICO" }
+  ],
+
+  "ownershipsSimplified": [
+    { "id": 1, "name": "Rental" },
+    { "id": 2, "name": "Client" },
+    { "id": 3, "name": "3rd Party" },
+    { "id": 5, "name": "SPS Project" },
+    { "id": 6, "name": "Rental ICO" }
+  ],
+
+  "releaseStatuses": [
+    { "id": 1, "name": "Pending", "class": "secondary" },
+    { "id": 2, "name": "Released", "class": "primary" },
+    { "id": 4, "name": "Cancelled", "class": "warning" }
+  ],
+
+  "executionStatuses": [
+    { "id": 1, "name": "Pending SO", "class": "secondary" },
+    { "id": 5, "name": "In Box", "class": "purple-2" },
+    { "id": 2, "name": "WIP", "class": "primary" },
+    { "id": 6, "name": "Farmed Out - Third Party", "class": "warning" },
+    { "id": 7, "name": "Stalled - Pending Parts", "class": "warning" },
+    { "id": 8, "name": "NDT Inspection", "class": "indigo-7" },
+    { "id": 3, "name": "With QC", "class": "purple-7" },
+    { "id": 10, "name": "Ready for TECO", "class": "primary" },
+    { "id": 4, "name": "Complete", "class": "primary" },
+    { "id": 9, "name": "No Workshop Scope", "class": "blue-grey-4" }
+  ]
+}

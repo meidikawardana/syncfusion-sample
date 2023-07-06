@@ -15,6 +15,16 @@ const routes = [
     },
   },
 
+  {
+    path: "/kanban",
+    component: () => import("src/pages/Kanban/KanbanPage.vue"),
+    meta: {
+      title: "Kanban Overview",
+      name: "Kanban Overview",
+      requiresAuth: false,
+    },
+  },
+
   // Always leave this as last one,
   // but you can also remove it
   {

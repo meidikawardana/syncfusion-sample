@@ -300,6 +300,20 @@
     "@syncfusion/ej2-popups" "~20.4.53"
     "@syncfusion/ej2-splitbuttons" "~20.4.50"
 
+"@syncfusion/ej2-kanban@20.4.54":
+  version "20.4.54"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-kanban/-/ej2-kanban-20.4.54.tgz#8b931387f0a1848c478f64ef2fe209aca282cdf6"
+  integrity sha512-h9KZ7ekm3GxG5QUCmiT79c7mogRhMeyGXOPsUttZEORG8p8huPwEmXqkhF1qNIhirrMQRIYBF5Ww9PUbGlx5AQ==
+  dependencies:
+    "@syncfusion/ej2-base" "~20.4.51"
+    "@syncfusion/ej2-buttons" "~20.4.53"
+    "@syncfusion/ej2-data" "~20.4.48"
+    "@syncfusion/ej2-dropdowns" "~20.4.54"
+    "@syncfusion/ej2-inputs" "~20.4.54"
+    "@syncfusion/ej2-layouts" "~20.4.53"
+    "@syncfusion/ej2-navigations" "~20.4.53"
+    "@syncfusion/ej2-popups" "~20.4.53"
+
 "@syncfusion/ej2-layouts@~20.4.53":
   version "20.4.53"
   resolved "https://registry.yarnpkg.com/@syncfusion/ej2-layouts/-/ej2-layouts-20.4.53.tgz#d9a0493d63da1764789f0476572e804c5fb83b1d"
@@ -416,6 +430,15 @@
   dependencies:
     "@syncfusion/ej2-base" "~20.4.51"
     "@syncfusion/ej2-grids" "20.4.54"
+    "@syncfusion/ej2-vue-base" "~20.4.51"
+
+"@syncfusion/ej2-vue-kanban@20.4.54":
+  version "20.4.54"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-vue-kanban/-/ej2-vue-kanban-20.4.54.tgz#15c33cf7af93e5a1515df3453d1d3b1124a1c0a2"
+  integrity sha512-3uJxTlIYY4/4kND2iDtKDXDSfyQTeunKYnYJIlBtJL9gKfOfLGR8vtfx2KlzM6mFW0oo7Ev9rr6TURkmIbQesA==
+  dependencies:
+    "@syncfusion/ej2-base" "~20.4.51"
+    "@syncfusion/ej2-kanban" "20.4.54"
     "@syncfusion/ej2-vue-base" "~20.4.51"
 
 "@types/body-parser@*":
@@ -634,6 +657,20 @@
   version "3.2.47"
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.47.tgz#e597ef75086c6e896ff5478a6bfc0a7aa4bbd14c"
   integrity sha512-BHGyyGN3Q97EZx0taMQ+OLNuZcW3d37ZEVmEAyeoA9ERdGvm9Irc/0Fua8SNyOtV1w6BS4q25wbMzJujO9HIfQ==
+
+"@vuelidate/core@^2.0.2":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@vuelidate/core/-/core-2.0.3.tgz#40468c5ed15b72bde880a026b0699c2f0f1ecede"
+  integrity sha512-AN6l7KF7+mEfyWG0doT96z+47ljwPpZfi9/JrNMkOGLFv27XVZvKzRLXlmDPQjPl/wOB1GNnHuc54jlCLRNqGA==
+  dependencies:
+    vue-demi "^0.13.11"
+
+"@vuelidate/validators@^2.0.2":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@vuelidate/validators/-/validators-2.0.3.tgz#f55d168adeb91ac25a3045c942a2354516226667"
+  integrity sha512-P4WtmczPRbwmVihKlSAs3pIjIil4xjHW+Qoi58MCw7vnKuYr/IHarOFkwp0K8eIIqiQqY4URM5Gb4aeDjna6Yw==
+  dependencies:
+    vue-demi "^0.13.11"
 
 accepts@~1.3.5, accepts@~1.3.8:
   version "1.3.8"
@@ -3167,7 +3204,7 @@ vue-class-component@^8.0.0-rc.1:
   resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-8.0.0-rc.1.tgz#db692cd97656eb9a08206c03d0b7398cdb1d9420"
   integrity sha512-w1nMzsT/UdbDAXKqhwTmSoyuJzUXKrxLE77PCFVuC6syr8acdFDAq116xgvZh9UCuV0h+rlCtxXolr3Hi3HyPQ==
 
-vue-demi@*:
+vue-demi@*, vue-demi@^0.13.11:
   version "0.13.11"
   resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.13.11.tgz#7d90369bdae8974d87b1973564ad390182410d99"
   integrity sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==
