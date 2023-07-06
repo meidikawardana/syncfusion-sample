@@ -1,6 +1,6 @@
 const routes = [
   {
-    path: "/",
+    path: "/tsp-schedule",
     component: () => import("layouts/TspScheduleGantt.vue"),
     children: [{ path: "", component: () => import("pages/Index.vue") }],
   },
@@ -16,7 +16,7 @@ const routes = [
   },
 
   {
-    path: "/kanban",
+    path: "/",
     component: () => import("src/pages/Kanban/KanbanPage.vue"),
     meta: {
       title: "Kanban Overview",
